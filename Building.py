@@ -1,9 +1,14 @@
+from Call import Call
 from Elevator import *
 import json
+import csv
 
 
 class Building:
-    def __init__(self, jFile):
+    myElevators = None
+    myCalls = None
+
+    def __init__(self, jFile, csvFile):
         self.myElevators = []
         try:
             f = open(jFile)
@@ -16,6 +21,17 @@ class Building:
                                     elev['_closeTime'], elev['_openTime'], elev['_startTime'], elev['_stopTime'])
                 self.myElevators.append(tempElev)
             f.close()
+        except FileNotFoundError:
+            print("No such file, please check your files and location")
+        calls_arr = []
+        try:
+            with open(csvFile, newline='') as file:
+                reader = csv.reader(file)
+                i=0;
+                for row in reader:
+                    calls_arr.append(Call(i, row[1], row[2], row[3], row[4], row[5]))
+                    i=i+1
+            self.myCalls = calls_arr
         except FileNotFoundError:
             print("No such file, please check your files and location")
 
