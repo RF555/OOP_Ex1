@@ -4,7 +4,7 @@ import sys
 class SCall(object):
     stop_id = None
     time = None
-    floor = None  # floor of src/dest
+    floor = None  # floor (src/dest)
     type = None  # 0 if src, 1 if dest
 
     def __init__(self, Call):
