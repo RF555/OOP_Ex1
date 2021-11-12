@@ -11,7 +11,7 @@ class Elevator:
         self.startTime = starttime
         self.stopTime = stoptime
         self.flag = None
-        self.curr = 0;
+        self.curr = 0
 
     # def getid(self):
     #      return self.elevid
