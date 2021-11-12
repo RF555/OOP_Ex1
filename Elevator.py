@@ -1,3 +1,7 @@
+from Call import *
+from SCall import *
+
+
 class Elevator:
     flag: bool
 
@@ -44,7 +48,10 @@ class Elevator:
             self.flag = False  # DOWN
 
     def i_to_j_time(self, i, j):
-        return self.closeTime + self.startTime + abs(i - j) * self.speed + self.stopTime + self.openTime
+        if type(i) == type(j) == SCall:
+            return self.closeTime + self.startTime + abs(i.floor - j.floor) * self.speed + self.stopTime + self.openTime
+        else:  # type is int
+            return self.closeTime + self.startTime + abs(i - j) * self.speed + self.stopTime + self.openTime
 
     def __str__(self):
         return 'This elevator id is:' + str(self.elevid) + '\nthe speed is:' + str(self.speed) + \
