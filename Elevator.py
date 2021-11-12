@@ -43,6 +43,9 @@ class Elevator:
         else:
             self.flag = False  # DOWN
 
+    def i_to_j_time(self, i, j):
+        return self.closeTime + self.startTime + abs(i - j) * self.speed + self.stopTime + self.openTime
+
     def __str__(self):
         return 'This elevator id is:' + str(self.elevid) + '\nthe speed is:' + str(self.speed) + \
                '\nthe min floor is:' + str(self.minFloor) + '\nthe max floor is:' + str(self.maxFloor) + \
