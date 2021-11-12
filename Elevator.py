@@ -1,4 +1,6 @@
 class Elevator:
+    flag: bool
+
     def __init__(self, elevid, speed, minfloor, maxfloor, closetime, opentime, starttime, stoptime):
         self.elevid = elevid
         self.speed = speed
@@ -8,6 +10,8 @@ class Elevator:
         self.openTime = opentime
         self.startTime = starttime
         self.stopTime = stoptime
+        self.flag = None
+        self.curr = 0;
 
     # def getid(self):
     #      return self.elevid
@@ -33,8 +37,14 @@ class Elevator:
     # def getstoptime(self):
     #     return self.stopTime
 
+    def update_flag(self, SCall):
+        if SCall.floor > self.curr:
+            self.flag = True  # UP
+        else:
+            self.flag = False  # DOWN
+
     def __str__(self):
         return 'This elevator id is:' + str(self.elevid) + '\nthe speed is:' + str(self.speed) + \
-               '\nthe min floor is:' + str(self.minFloor) + '\nthe max floor is:' + str(self.maxFloor) +\
+               '\nthe min floor is:' + str(self.minFloor) + '\nthe max floor is:' + str(self.maxFloor) + \
                '\nthe close time is:' + str(self.closeTime) + '\nthe open time is:' + str(self.openTime) + \
                '\nthe start time is:' + str(self.startTime) + '\nthe stop time is:' + str(self.stopTime)
