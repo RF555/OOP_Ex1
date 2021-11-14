@@ -99,7 +99,7 @@ celerybeat.pid
 *.sage.py
 
 #target/
-
+*.json
 # Environments
 .env
 .venv
