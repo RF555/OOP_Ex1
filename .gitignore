@@ -126,4 +126,4 @@ venv.bak/
 
 *.csv
 *.zip
-#*.py
+*.py
