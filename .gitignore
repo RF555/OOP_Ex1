@@ -122,3 +122,8 @@ venv.bak/
 
 # Pyre type checker
 .pyre/
+
+
+*.csv
+*.zip
+#*.py
