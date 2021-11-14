@@ -2,6 +2,7 @@
   "_minFloor": -2,
   "_maxFloor": 10,
   "_elevators": [
+
     {
       "_id": 0,
       "_speed": 0.5,
