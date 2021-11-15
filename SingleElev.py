@@ -17,5 +17,5 @@ class SinglgeElev:
     myDownCalls = []
     jsonFile = 'C:\\Users\\roeyf\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
     csvFile = 'C:\\Users\\roeyf\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
-    myBuiding = Building(jsonFile, csvFile)
-    if myBuiding.myElevators.__sizeof__() == 1:
+    myBuilding = Building(jsonFile, csvFile)
+    if myBuilding.myElevators.__sizeof__() == 1:
