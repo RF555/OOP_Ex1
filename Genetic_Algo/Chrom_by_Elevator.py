@@ -3,7 +3,7 @@ import random
 import Call
 
 
-class Chrom:
+class Chrom_by_Elevator:
     Calls = None
     Elev = None
     A = None
