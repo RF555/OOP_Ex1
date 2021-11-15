@@ -15,31 +15,7 @@ class Elevator:
         self.startTime = starttime
         self.stopTime = stoptime
         self.flag = None
-        self.curr = 0
-
-    # def getid(self):
-    #      return self.elevid
-    #
-    # def getspeed(self):
-    #      return self.speed
-    #
-    # def getminfloor(self):
-    #     return self.minFloor
-    #
-    # def getmaxfloor(self):
-    #     return self.maxFloor
-    #
-    # def getclosetime(self):
-    #     return self.closeTime
-    #
-    # def getopentime(self):
-    #     return self.openTime
-    #
-    # def getstarttime(self):
-    #     return self.startTime
-    #
-    # def getstoptime(self):
-    #     return self.stopTime
+        self.curr_floor = 0
 
     def update_flag(self, SCall):
         if SCall.floor > self.curr:
@@ -49,7 +25,11 @@ class Elevator:
 
     def i_to_j_time(self, i, j):
         if type(i) == type(j) == SCall:
-            return self.closeTime + self.startTime + abs(i.floor - j.floor) / self.speed + self.stopTime + self.openTime
+            if i.floor == j.floor:
+                return
+            else:
+                return self.closeTime + self.startTime + abs(
+                    i.floor - j.floor) / self.speed + self.stopTime + self.openTime
         else:  # type is int
             return self.closeTime + self.startTime + abs(i - j) / self.speed + self.stopTime + self.openTime
 
