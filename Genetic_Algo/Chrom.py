@@ -33,8 +33,9 @@ class Chrom:
         e = self.Elev
         c_time=0
         if i==0:
-            return 
+            return 0
         for j in range(i+1):
             if self.A[i]==1:
+
 
         ?????
