@@ -3,7 +3,7 @@ import random
 import Call
 
 
-class Chrom:
+class ChromByElevator:
     Calls = None
     Elev = None
     A = None
@@ -13,7 +13,7 @@ class Chrom:
         self.Elev = Elev
         self.A = [len(Calls)]
         for i in range(len(Calls)):
-            rand = random()
+            rand = random.random()
             if rand >= 0.5:
                 self.A[i] = 0
             else:
@@ -25,16 +25,17 @@ class Chrom:
         for i in range(len(self.A)):
             if self.A[i] == 1:
                 curr_calls += 1
-                total_wait_time += self.destCallTime(self.Calls[i]) - self.Calls[i].requset_time
+                total_wait_time += self.dest_call_time(self.Calls[i]) - self.Calls[i].requset_time
         return total_wait_time / curr_calls
 
     def dest_call_time(self, i):
         c = self.Calls[i]
         e = self.Elev
-        c_time=0
-        if i==0:
-            return 
-        for j in range(i+1):
-            if self.A[i]==1:
+        c_time = 0
+        if i == 0:
+            return 0
+        for j in range(i + 1):
+            if self.A[i] == 1:
+
 
         ?????
