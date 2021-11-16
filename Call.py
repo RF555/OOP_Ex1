@@ -20,5 +20,5 @@ class Call:
     def __str__(self):
         return "Elevator call," + self.request_time.__str__() + "," + self.srcFloor.__str__() + "," + self.destFloor.__str__() + ',' + self.elevStatus.__str__() + ',' + self.allocatedElev.__str__()
 
-    def changeallocatedelev(self , elevNumber):
+    def changeallocatedelev(self, elevNumber):
         self.allocatedElev = elevNumber

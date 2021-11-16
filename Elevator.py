@@ -2,6 +2,7 @@ from Call import *
 from SCall import *
 import numpy as np
 
+
 class Elevator:
     flag: bool
 
@@ -17,7 +18,7 @@ class Elevator:
         self.flag = None
         self.curr_floor = 0
         self.myCalls = []
-        self.timeLine =  np.zeros(maxfloor - minfloor)
+        self.timeLine = np.zeros(maxfloor - minfloor)
 
     def update_flag(self, SCall):
         if SCall.floor > self.curr:

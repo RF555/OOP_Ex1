@@ -18,8 +18,10 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # building1 = Building('C:\\Users\\Matanel\\PycharmProjects\\OOP_2021-main\\OOP_2021-main\\Assignments\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B5.json')
-    jsonFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
-    csvFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
+    # jsonFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
+    # csvFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
+    jsonFile='C:\\Users\\Roey\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
+    csvFile='C:\\Users\\Roey\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
     building1 = Building(jsonFile, csvFile)
     temp = building1.myCalls[0]
     temp1 = building1.myCalls[1]
