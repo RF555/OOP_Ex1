@@ -1,3 +1,6 @@
+import main
+import offlineAlgo
+from Building import *
 class myFunction:
     def elevDir(call):
         #This function will check in which direcdion the call is True for UP False for Down
@@ -25,7 +28,20 @@ class myFunction:
         if elevetor.timeLine[0 - elevetor.minFloor] == 0:
             elevetor.timeLine[0 - elevetor.minFloor] = call.request_time
             for cell in range(1 - elevetor.minFloor,temp):
-                elevetor.timeLine[cell] = (elevetor.timeLine[0 - elevetor.minFloor] + ((cell + elevetor.minFloor) /elevetor.speed) + elevetor.openTime + elevetor.startTime)
+                elevetor.timeLine[cell] = (elevetor.timeLine[0 - elevetor.minFloor] + ((cell + elevetor.minFloor) /elevetor.speed) + elevetor.closeTime + elevetor.startTime)
         else:
             for cell in range(int(call.srcFloor) - int(elevetor.minFloor), temp):
                 elevetor.timeLine[cell] = elevetor.timeLine[cell] + (elevetor.openTime + elevetor.closeTime + elevetor.startTime + elevetor.stopTime)
+
+    def allocateElev(callsList, elevetor, call):
+        callTimeStemp = call.request_time
+        allCalls = callsList
+        for call in allCalls:
+            if call.request_time == callTimeStemp:
+                callIndex = callsList.index(call)
+                newCall = Call(call.request_time, call.srcFloor, call.destFloor, call.elevStatus, call.elevIndex, 0)
+                print(elevetor.elevid)
+                print(newCall)
+                callsList.insert(callIndex,newCall)
+                callsList.pop(callIndex+1)
+                break

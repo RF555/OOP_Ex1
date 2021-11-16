@@ -29,7 +29,7 @@ class Building:
                 reader = csv.reader(file)
                 i = 0;
                 for row in reader:
-                    calls_arr.append(Call(row[1], row[2], row[3], row[4], row[5], i))
+                    calls_arr.append(Call(row[1], row[2], row[3], row[4], row[5], -1))
                     i = i + 1
             self.myCalls = calls_arr
         except FileNotFoundError:
