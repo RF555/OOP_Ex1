@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (OOP_Ex1)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (OOP_Ex1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Ex1_checker_V1.2_obf" level="project" />
   </component>

@@ -35,13 +35,14 @@ class Building:
         except FileNotFoundError:
             print("No such file, please check your files and location")
         self.up_calls = []
-        for i in range(self.myCalls.__sizeof__()):
-            if (self.myCalls[i].call_dir == True):
-                up_calls.append(self.myCalls[i])
         self.down_calls = []
-        for i in range(self.myCalls.__sizeof__()):
-            if (self.myCalls[i].call_dir == False):
-                down_calls.append(self.myCalls[i])
+       # for i in range(self.myCalls.__sizeof__()):
+          #  if (self.myCalls[i].call_dir == True):
+               # self.up_calls.append(self.myCalls[i])
+       # self.down_calls = []
+       # for i in range(self.myCalls.__sizeof__()):
+            #if (self.myCalls[i].call_dir == False):
+                #self.down_calls.append(self.myCalls[i])
 
     def getminfloor(self):
         return self.minFloor
