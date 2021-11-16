@@ -2,7 +2,7 @@ import Call
 import random
 
 
-class Chrom_by_Calls:
+class ChromByCalls:
     Calls = None
     Elevs = None
     A = None
@@ -15,10 +15,16 @@ class Chrom_by_Calls:
         self.A = [len(Calls)]
         elev_sum = len(Elevs)
         for i in range(len(Calls)):
-            rnd = random() * 100 * elev_sum
+            rnd = random.random() * 100 * elev_sum
             # int_rnd: int = rnd
             int_rnd = round(rnd)
+            """
+            add limitations on assigning the random Elevator to the i'th call
+            while loop considering the previous calls assigned to the random Elevator
+             
+            """
+
             if int_rnd >= 0 & int_rnd < elev_sum:  # assign the random elevator
                 self.A = i
             else:
-                i = i - 1
+                i -= 1
