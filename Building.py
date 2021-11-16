@@ -36,13 +36,11 @@ class Building:
             print("No such file, please check your files and location")
         self.up_calls = []
         self.down_calls = []
-       # for i in range(self.myCalls.__sizeof__()):
-          #  if (self.myCalls[i].call_dir == True):
-               # self.up_calls.append(self.myCalls[i])
-       # self.down_calls = []
-       # for i in range(self.myCalls.__sizeof__()):
-            #if (self.myCalls[i].call_dir == False):
-                #self.down_calls.append(self.myCalls[i])
+        for i in range(len(self.myCalls)):
+            if (self.myCalls[i].call_dir == True):
+                self.up_calls.append(self.myCalls[i])
+            else:  # the Call is DOWN
+                self.down_calls.append(self.myCalls[i])
 
     def getminfloor(self):
         return self.minFloor
@@ -60,4 +58,3 @@ class Building:
             return myString
         except AttributeError:
             return 'Nothing to print'
-

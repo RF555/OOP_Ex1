@@ -18,20 +18,18 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # building1 = Building('C:\\Users\\Matanel\\PycharmProjects\\OOP_2021-main\\OOP_2021-main\\Assignments\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B5.json')
-    jsonFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
-    csvFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
+    # jsonFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
+    # csvFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
+    jsonFile='C:\\Users\\Roey\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
+    csvFile='C:\\Users\\Roey\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
     building1 = Building(jsonFile, csvFile)
     temp = building1.myCalls[0]
     temp1 = building1.myCalls[1]
-    newCall = Call(temp.request_time, temp.srcFloor, temp.destFloor, temp.elevStatus, temp.elevIndex, 191)
-    newCall1 = Call(1, 1, 1, 1, 1, 191)
-    print(newCall)
-    print(newCall1)
-    #print(building1.myCalls[1])
-    #print(building1.myCalls[1].allocatedElev)
-    #myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
-    #print(building1.myCalls[1])
-    #print(building1.myCalls[1].allocatedElev)
+    print(building1.myCalls[1])
+    print(building1.myCalls[1].allocatedElev)
+    myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
+    print(building1.myCalls[1])
+    print(building1.myCalls[1].allocatedElev)
     #Here are the test for my functions
     ####################################################################################
     # print(temp)
