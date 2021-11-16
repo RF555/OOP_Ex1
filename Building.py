@@ -27,10 +27,10 @@ class Building:
         try:
             with open(csvFile, newline='') as file:
                 reader = csv.reader(file)
-                i = 0;
+                i = 0
                 for row in reader:
                     calls_arr.append(Call(row[1], row[2], row[3], row[4], row[5], -1))
-                    i = i + 1
+                    i += 1
             self.myCalls = calls_arr
         except FileNotFoundError:
             print("No such file, please check your files and location")
