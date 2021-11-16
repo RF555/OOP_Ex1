@@ -34,6 +34,7 @@ if __name__ == '__main__':
     myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
     print(building1.myCalls[1])
     print(building1.myCalls[1].allocatedElev)
+    print()
     # Here are the test for my functions
     ####################################################################################
     # print(temp)

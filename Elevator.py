@@ -5,6 +5,7 @@ import numpy as np
 
 class Elevator:
     flag: bool
+    my_q = None
 
     def __init__(self, elevid, speed, minfloor, maxfloor, closetime, opentime, starttime, stoptime):
         self.elevid = elevid
