@@ -23,15 +23,11 @@ if __name__ == '__main__':
     building1 = Building(jsonFile, csvFile)
     temp = building1.myCalls[0]
     temp1 = building1.myCalls[1]
-    newCall = Call(temp.request_time, temp.srcFloor, temp.destFloor, temp.elevStatus, temp.elevIndex, 191)
-    newCall1 = Call(1, 1, 1, 1, 1, 191)
-    print(newCall)
-    print(newCall1)
-    #print(building1.myCalls[1])
-    #print(building1.myCalls[1].allocatedElev)
-    #myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
-    #print(building1.myCalls[1])
-    #print(building1.myCalls[1].allocatedElev)
+    print(building1.myCalls[1])
+    print(building1.myCalls[1].allocatedElev)
+    myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
+    print(building1.myCalls[1])
+    print(building1.myCalls[1].allocatedElev)
     #Here are the test for my functions
     ####################################################################################
     # print(temp)
