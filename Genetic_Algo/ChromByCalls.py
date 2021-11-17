@@ -1,30 +1,35 @@
 import Call
 import random
 
+from Elevator import Elevator
+
 
 class ChromByCalls:
-    Calls = None
-    Elevs = None
-    A = None
+    Calls: Call = []
+    Elevs: Elevator = []
+    Allocate: int = []
 
     # an array the size of all the calls, each call gets randomly assigned to an elevator
 
     def __init__(self, Calls: Call, Elevs):
         self.Calls = Calls
         self.Elevs = Elevs
-        self.A = [len(Calls)]
-        elev_sum = len(Elevs)
+        self.Allocate = [len(Calls)]
         for i in range(len(Calls)):
-            rnd = random.random() * 100 * elev_sum
-            # int_rnd: int = rnd
-            int_rnd = round(rnd)
+            counter: int = len(self.Elevs.)
+            """
+            add a counter for the number of calls for each elevator
+            ??? counter < 
+            """
+            rnd = random.choice(Elevs)
             """
             add limitations on assigning the random Elevator to the i'th call
             while loop considering the previous calls assigned to the random Elevator
              
             """
+            self.Allocate[i] = rnd  # assign the random elevator
 
-            if int_rnd >= 0 & int_rnd < elev_sum:  # assign the random elevator
-                self.A = i
-            else:
-                i -= 1
+
+def is_able(self, call_index: int, elev_index: int):
+    call = self.Calls[call_index]
+    elev = self.Elevs[elev_index]
