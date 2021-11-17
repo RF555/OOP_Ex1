@@ -14,10 +14,10 @@ def update_q(elev: Elevator, q):
         else:
             temp: float = Elevator.i_to_j_time(elev, q[i - 1].floor, q[i].floor)
             q[i].arrival_time = q[i - 1].arrival_time + temp
-            if type(q[i]) == SrcStop:
+            if q[i].type == 0:  # is SrcStop
                 q[i].pick_up_time = q[i].arrival_time
             else:
-                q[i].pick_up_time = q[i].arrival_time
+                q[i].drop_off_time = q[i].arrival_time
 
 
 class ChromByCalls:
