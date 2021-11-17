@@ -8,7 +8,8 @@ class Call:
     CallStatus = 'Waiting'
     call_dir: bool  # if call is UP- TRUE, if call is DOWN- FALSE
 
-    def __init__(self, request_time, srcFloor, destFloor, elevStatus, elevIndex, allocatedElev):
+    def __init__(self, request_time: float, srcFloor: int, destFloor: int, elevStatus, elevIndex: int,
+                 allocatedElev: int):
         self.elevIndex = elevIndex
         self.elevStatus = elevStatus
         self.request_time = request_time

@@ -4,8 +4,6 @@ import numpy as np
 
 
 class Elevator:
-    flag: bool
-    my_q = None
 
     def __init__(self, elevid, speed, minfloor, maxfloor, closetime, opentime, starttime, stoptime):
         self.elevid = elevid
@@ -20,6 +18,8 @@ class Elevator:
         self.curr_floor = 0
         self.myCalls = []
         self.timeLine = np.zeros(maxfloor - minfloor)
+        self.floor_num = abs(self.maxFloor) + abs(self.minFloor) + 1
+        self.s_q = []
 
     def update_flag(self, SCall):
         if SCall.floor > self.curr:
@@ -36,6 +36,30 @@ class Elevator:
                     i.floor - j.floor) / self.speed + self.stopTime + self.openTime
         else:  # type is int
             return self.closeTime + self.startTime + abs(i - j) / self.speed + self.stopTime + self.openTime
+
+    def to_dict(self):
+        return {
+            '_id': self.elevid,
+            'speed': self.speed,
+            'minFloor': self.minFloor,
+            'maxFloor': self.maxFloor,
+            'closeTime': self.closeTime,
+            'openTime': self.openTime,
+            'startTime': self.startTime,
+            'stopTime': self.stopTime,
+            'flag': self.flag,
+            'curr_floor': self.curr_floor,
+            'myCalls': self.myCalls,
+            'timeline': self.timeLine,
+            'floor_num': self.floor_num
+        }
+
+    # def add_call_to_q(self, call: Call):
+    #     src: SCall = SrcStop(call)
+    #     dest: SCall = DestStop(call)
+    #     if call.request_time>self.s_q[-1]:
+    #         for sc in range(self.s_q):
+    #             if (type(self.s_q[sc])==SrcStop &
 
     def __str__(self):
         return 'This elevator id is:' + str(self.elevid) + '\nthe speed is:' + str(self.speed) + \

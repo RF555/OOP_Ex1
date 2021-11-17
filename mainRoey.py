@@ -27,12 +27,15 @@ if __name__ == '__main__':
     temp = building1.myCalls[0]
     temp1 = building1.myCalls[1]
     print(building1.myCalls[1])
-    print(building1.myCalls[1].allocatedElev)
-    myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
-    print(building1.myCalls[1])
-    print(building1.myCalls[1].allocatedElev)
-    print(building1.up_calls)
-    # Here are the test for my functions
+    print(building1.myCalls[1].allocatedElev,"\n")
+    # myFunction.allocateElev(building1.myCalls, building1.myElevators[0], temp1)
+    # print(building1.myCalls[1])
+    # print(building1.myCalls[1].allocatedElev)
+    # print(building1.up_calls)
+    upcalls = building1.up_calls
+    for call in upcalls:
+        if int(call.srcFloor) > int(call.destFloor):
+            print("false")    # Here are the test for my functions
     ####################################################################################
     # print(temp)
     # print(temp1)
