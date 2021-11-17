@@ -66,13 +66,24 @@ def allocateElev(callsList, elevetor, call):
             break
 
 
-def pickUpOptionup(elevetor, call):
+def pickUpOption(elevetor, call):
     # we going up
     temp = int(call.srcFloor) - elevetor.minFloor
-    if float(elevetor.timeLine[int(call.srcFloor) - elevetor.minFloor]) > float(call.request_time):
-        if call.srcFloor < elevetor.myCalls.pop():
+    if elevetor.flag == 1:
+        if float(elevetor.timeLine[int(call.srcFloor) - elevetor.minFloor]) > float(call.request_time):
+            if call.srcFloor < elevetor.elevCalls[-1]:
+                return True
+        return False
+    elif elevetor.flag == 0:
+        if float(elevetor.timeLine[int(call.srcFloor) - elevetor.minFloor]) > float(call.request_time):
+            if call.srcFloor < elevetor.elevCalls[0]:
+                return True
+            return False
+    else:
+        if myFunction.time_to_src(elevetor, call) > float(call.request_time):
             return True
-    return False
+        else:
+            return False
 
 
 def time_to_src(elevetor, call):
