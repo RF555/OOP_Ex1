@@ -24,17 +24,21 @@ class myFunction:
         if call.destFloor not in tempCalls:
             elevator.myCalls.append(call.destFloor)
 
-    def elevatorTimeline(elevetor, call):
-        temp = len(elevetor.timeLine)
-        if elevetor.timeLine[0 - elevetor.minFloor] == 0:
-            elevetor.timeLine[0 - elevetor.minFloor] = call.request_time
-            for cell in range(1 - elevetor.minFloor, temp):
-                elevetor.timeLine[cell] = (elevetor.timeLine[0 - elevetor.minFloor] + (
-                            (cell + elevetor.minFloor) / elevetor.speed) + elevetor.closeTime + elevetor.startTime)
+    def elevator_timeline_up(elevetor, call):
+        len_timeline = len(elevetor.timeLine)
+        sync_floor_cell = int(call.srcFloor) - elevetor.minFloor
+        if elevetor.timeLine[sync_floor_cell] == 0:
+            elevetor.timeLine[sync_floor_cell] = call.request_time
+            for cell in range(sync_floor_cell + 1, len_timeline):
+                # if cell + elevetor.minFloor == call.srcFloor:
+                # continue
+                floorDiff = cell - sync_floor_cell
+                elevetor.timeLine[cell] = (elevetor.timeLine[sync_floor_cell] + (
+                        floorDiff / elevetor.speed) + elevetor.closeTime + elevetor.startTime)
         else:
-            for cell in range(int(call.srcFloor) - int(elevetor.minFloor), temp):
+            for cell in range(sync_floor_cell, len_timeline):
                 elevetor.timeLine[cell] = elevetor.timeLine[cell] + (
-                            elevetor.openTime + elevetor.closeTime + elevetor.startTime + elevetor.stopTime)
+                        elevetor.openTime + elevetor.closeTime + elevetor.startTime + elevetor.stopTime)
 
     def allocateElev(callsList, elevetor, call):
         callTimeStemp = call.request_time
