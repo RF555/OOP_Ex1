@@ -5,7 +5,6 @@ import csv
 from Elevator import *
 from Building import *
 from myFunction import *
-import pandas as pd
 
 # This is a sample Python script.
 
