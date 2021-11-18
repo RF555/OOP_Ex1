@@ -73,7 +73,7 @@ if __name__ == '__main__':
                     #elevator not LEVEL
                     else:
                         #UP
-                        if call.call_dir:
+                        if call.is_up:
                             if float(call.request_time) > float(elev.timeLine[-1]):
                                 elev.flag =0
                                 for cell in range(len(elev.timeLine)):

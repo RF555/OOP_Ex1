@@ -37,7 +37,7 @@ class Building:
         self.up_calls = []
         self.down_calls = []
         for i in range(len(self.myCalls)):
-            if (self.myCalls[i].call_dir == True):
+            if (self.myCalls[i].is_up == True):
                 self.up_calls.append(self.myCalls[i])
             else:  # the Call is DOWN
                 self.down_calls.append(self.myCalls[i])

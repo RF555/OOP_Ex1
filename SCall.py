@@ -16,7 +16,7 @@ class SCall(object):
         self.drop_off_time = (-1) * sys.maxsize
         self.pick_up_time = (-1) * sys.maxsize
         self.arrival_time = (-1) * sys.maxsize
-        self.call_dir: bool = Call.call_dir
+        self.call_dir: bool = Call.is_up
 
     def to_dict(self):
         return {
