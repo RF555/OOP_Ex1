@@ -1,4 +1,5 @@
 import sys
+import Call
 
 
 class SCall(object):
@@ -10,13 +11,14 @@ class SCall(object):
     drop_off_time: float
     type = None  # 0 if src, 1 if dest
 
-    def __init__(self, Call, index):
+    def __init__(self, call: Call, index):
         self.stop_id = (-1) * sys.maxsize
-        self.call_time = Call.request_time
+        self.call_time = call.request_time
         self.drop_off_time = (-1) * sys.maxsize
         self.pick_up_time = (-1) * sys.maxsize
         self.arrival_time = (-1) * sys.maxsize
-        self.call_dir: bool = Call.is_up
+        self.is_up: bool = call.is_up
+        self.is_down: bool = call.is_down
 
     def to_dict(self):
         return {
@@ -28,15 +30,15 @@ class SCall(object):
 
 
 class SrcStop(SCall):
-    def __init__(self, Call):
+    def __init__(self, call: Call):
         self.type = 0
-        self.floor = Call.srcFloor
+        self.floor = call.srcFloor
         self.arrival_time = self.pick_up_time
 
 
 class DestStop(SCall):
 
-    def __init__(self, Call):
+    def __init__(self, call: Call):
         self.type = 1
-        self.floor = Call.destFloor
+        self.floor = call.destFloor
         self.arrival_time = self.drop_off_time
