@@ -33,7 +33,7 @@ if __name__ == '__main__':
     downcalls = building1.down_calls
     if len(building1.myElevators) == 1:
         for call in building1.myCalls:
-            myFunction.allocateElev(allCalls , building1.myElevators[0],call)
+            myFunction.allocate_elev(allCalls, building1.myElevators[0], call)
         for call in building1.myCalls:
             print(call)
     else:
@@ -45,8 +45,8 @@ if __name__ == '__main__':
                     #LEVEL!
                     if elev.flag == 0:
                         myFunction.change_flag(elev, call)
-                        myFunction.allocateElev(allCalls, elev, call)
-                        myFunction.elevatorTimeline(elev, call)
+                        myFunction.allocate_elev(allCalls, elev, call)
+                        myFunction.elevator_timeline(elev, call)
                         if elev.flag == 1:
                             myFunction.update_up_down_call(elev,call,building1.up_calls)
                         elif elev.flag ==-1:
@@ -57,23 +57,23 @@ if __name__ == '__main__':
                                 if up_call.allocatedElev != -1:
                                     continue
                                 else:
-                                    if myFunction.pickUpOption(elev, up_call):
+                                    if myFunction.pick_up_option(elev, up_call):
                                         up_call.allocatedElev = 0
-                                        myFunction.allocateElev(allCalls, elev, up_call)
+                                        myFunction.allocate_elev(allCalls, elev, up_call)
                                         myFunction.change_flag(elev, up_call)
-                                        myFunction.elevatorTimeline(elev, up_call)
+                                        myFunction.elevator_timeline(elev, up_call)
                         #DOWN
                         else:
                             for down_call in downcalls:
                                 if down_call.allocatedElev != -1:
                                     continue
                                 else:
-                                    if myFunction.pickUpOption(elev, down_call):
+                                    if myFunction.pick_up_option(elev, down_call):
                                         down_call.allocatedElev = 0
-                                        myFunction.allocateElev(allCalls, elev, down_call)
+                                        myFunction.allocate_elev(allCalls, elev, down_call)
                                         myFunction.change_flag(elev, down_call)
-                                        myFunction.elevatorTimeline(elev, down_call)
-                    #elevetor not LEVEL
+                                        myFunction.elevator_timeline(elev, down_call)
+                    #elevator not LEVEL
                     else:
                         #UP
                         if call.call_dir:
