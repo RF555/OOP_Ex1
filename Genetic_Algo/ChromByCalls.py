@@ -52,7 +52,7 @@ class ChromByCalls:
     def is_able(self, call_index: int, elev_index: int):
         call = self.Calls[call_index]
         elev = self.Elevs[elev_index]
-        return mf.pickUpOption(elev, call)
+        return mf.pick_up_option(elev, call)
 
     def chrom_timeline(self, elev_index: int):
         elev: Elevator = self.Elevs[elev_index]
