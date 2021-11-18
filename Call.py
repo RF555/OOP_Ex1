@@ -3,11 +3,13 @@ class Call:
     elevStatus: int = None
     request_time = None
     allocatedElev: int = None
-    srcFloor: int = None
-    destFloor: int = None
+    srcFloor: int
+    destFloor: int
     CallStatus = 'Waiting'
+    # change call_dir to int: 1 is UP, -1 is DOWN, 0 is LEVEL
     call_dir: bool  # if call is UP- TRUE, if call is DOWN- FALSE
 
+    # def __init__(self, request_time, srcFloor, destFloor, elevStatus, elevIndex, allocatedElev):
     def __init__(self, request_time: float, srcFloor: int, destFloor: int, elevStatus, elevIndex: int,
                  allocatedElev: int):
         self.elevIndex = elevIndex
@@ -16,6 +18,7 @@ class Call:
         self.allocatedElev = allocatedElev
         self.srcFloor = srcFloor
         self.destFloor = destFloor
+        # self.call_dir = (int(self.srcFloor) < int(self.destFloor))
         self.call_dir = (self.srcFloor < self.destFloor)
 
     def __str__(self):

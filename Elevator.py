@@ -14,10 +14,10 @@ class Elevator:
         self.openTime = opentime
         self.startTime = starttime
         self.stopTime = stoptime
-        self.flag = None
+        self.flag = 0
         self.curr_floor = 0
-        self.myCalls = []
-        self.timeLine = np.zeros(maxfloor - minfloor)
+        self.elevCalls = []
+        self.timeLine = np.zeros(maxfloor - minfloor +1)
         self.floor_num = abs(self.maxFloor) + abs(self.minFloor) + 1
         self.s_q = []
 
