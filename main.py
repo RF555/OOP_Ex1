@@ -33,7 +33,7 @@ if __name__ == '__main__':
     downcalls = building1.down_calls
     if len(building1.myElevators) == 1:
         for call in building1.myCalls:
-            myFunction.allocate_elev(allCalls, building1.myElevators[0], call)
+            allocate_elev(allCalls, building1.myElevators[0], call)
         for call in building1.myCalls:
             print(call)
     else:
@@ -44,35 +44,35 @@ if __name__ == '__main__':
                 for elev in building1.myElevators:
                     #LEVEL!
                     if elev.flag == 0:
-                        myFunction.change_flag(elev, call)
-                        myFunction.allocate_elev(allCalls, elev, call)
-                        myFunction.elevator_timeline(elev, call)
+                        change_flag(elev, call)
+                        allocate_elev(allCalls, elev, call)
+                        elevator_timeline(elev, call)
                         if elev.flag == 1:
-                            myFunction.update_up_down_call(elev,call,building1.up_calls)
+                            update_up_down_call(elev,call,building1.up_calls)
                         elif elev.flag ==-1:
-                            myFunction.update_up_down_call(elev,call,building1.down_calls)
+                            update_up_down_call(elev,call,building1.down_calls)
                         #UP
                         if elev.flag == 1:
                             for up_call in upcalls:
                                 if up_call.allocatedElev != -1:
                                     continue
                                 else:
-                                    if myFunction.pick_up_option(elev, up_call):
+                                    if pick_up_option(elev, up_call):
                                         up_call.allocatedElev = 0
-                                        myFunction.allocate_elev(allCalls, elev, up_call)
-                                        myFunction.change_flag(elev, up_call)
-                                        myFunction.elevator_timeline(elev, up_call)
+                                        allocate_elev(allCalls, elev, up_call)
+                                        change_flag(elev, up_call)
+                                        elevator_timeline(elev, up_call)
                         #DOWN
                         else:
                             for down_call in downcalls:
                                 if down_call.allocatedElev != -1:
                                     continue
                                 else:
-                                    if myFunction.pick_up_option(elev, down_call):
+                                    if pick_up_option(elev, down_call):
                                         down_call.allocatedElev = 0
-                                        myFunction.allocate_elev(allCalls, elev, down_call)
-                                        myFunction.change_flag(elev, down_call)
-                                        myFunction.elevator_timeline(elev, down_call)
+                                        allocate_elev(allCalls, elev, down_call)
+                                        change_flag(elev, down_call)
+                                        elevator_timeline(elev, down_call)
                     #elevator not LEVEL
                     else:
                         #UP
@@ -95,7 +95,7 @@ if __name__ == '__main__':
         if call.allocatedElev == -1:
             x = len(building1.myElevators)
             tempelev = random.randint(0,x-1)
-            myFunction.allocateElev(allCalls, building1.myElevators[tempelev], call)
+            allocate_elev(allCalls, building1.myElevators[tempelev], call)
     #myFunction.fromArrayToCsv(building1.myCalls)
     with open('C:\\Users\\Matanel\\Desktop\\test\\output.csv','w') as myfile:
         for l in building1.myCalls:
