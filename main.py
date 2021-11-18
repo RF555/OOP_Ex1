@@ -20,13 +20,11 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # building1 = Building('C:\\Users\\Matanel\\PycharmProjects\\OOP_2021-main\\OOP_2021-main\\Assignments\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B5.json')
-    jsonFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Buildings\\B4.json'
-    csvFile = 'C:\\Users\\Matanel\\Desktop\\Ex1\\Ex1-Git\\data\\Ex1_input\\Ex1_Calls\\Calls_d.csv'
-    #jsonFile = 'C:\\Users\\Roey\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
-    #csvFile = 'C:\\Users\\Roey\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
-    # jsonFile = 'C:\\Users\\roeyf\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Buildings\\B1.json'
-    # csvFile = 'C:\\Users\\roeyf\\Documents\\GitHub\\OOP_Ex1\\data\\Ex1_input\\Ex1_Calls\\Calls_a.csv'
+    myinput = input("Enter Building json file, call case csv file , and output csv file, with blank space between each one:")
+    templist = myinput.split(" ")
+    jsonFile = templist[0]
+    csvFile = templist[1]
+    myoutput= templist[2]
     building1 = Building(jsonFile, csvFile)
     allCalls = building1.myCalls
     upcalls = building1.up_calls
@@ -97,7 +95,7 @@ if __name__ == '__main__':
             tempelev = random.randint(0,x-1)
             allocate_elev(allCalls, building1.myElevators[tempelev], call)
     #myFunction.fromArrayToCsv(building1.myCalls)
-    with open('C:\\Users\\Matanel\\Desktop\\test\\output.csv','w') as myfile:
+    with open(myoutput,'w') as myfile:
         for l in building1.myCalls:
             myfile.write(l.__str__())
             myfile.write('\n')
